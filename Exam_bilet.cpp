@@ -12,6 +12,14 @@ int* initArray(int* M, int Size) {
     return M;
 }
 
+void deleteArray(int** A, int n)
+{
+    for (int i = 0; i < n; i++)
+        delete[] A[i];
+    delete[] A;
+} // функция освобождения памяти
+
+
 
 int Integer(int& random, int& x)
 {
@@ -29,8 +37,8 @@ void addElement(int**& A, int& n)
     int** newArray = nullptr;
     newArray = initArray(newArray, n + 1);
         
-    deleteMatrix(A, n);
-    n = n + 1; //изменяем количество 'строкэлементов в массиве на 1
+    deleteArray(A, n);
+    n = n + 1; //изменяем количество элементов в массиве на 1
     A = newArray;
 
 }// функция добавления новой строки в матрицу
@@ -54,9 +62,9 @@ int main()
 
     const int n = x; //переменная для размера массива
     int* M = nullptr; // объявление указателя
-    M = initArray(M, n);
+    M = initArray(M, n); // массив для хранения вытянутых билет
 
-    int M[n]; // массив для хранения вытянутых билетов
+    //int M[n]; // массив для хранения вытянутых билетов
 
     while (true) // пока идет экзамен (пока вытягивают билеты)
     {
@@ -84,8 +92,8 @@ int main()
 
 
 
-
-    
+    deleteArray(M, n);
+     
     cout << "\n";
 }
 
