@@ -1,0 +1,8 @@
+﻿  Exam_bilet.cpp
+C:\Users\postp\Desktop\Программирование\Конфигурирование Windows 10\Exam_bilet\Exam_bilet.cpp(38,11): error C2131: выражение не определяется константой
+  C:\Users\postp\Desktop\Программирование\Конфигурирование Windows 10\Exam_bilet\Exam_bilet.cpp(37,19):
+  сбой вызван чтением переменной вне срока ее существования
+  C:\Users\postp\Desktop\Программирование\Конфигурирование Windows 10\Exam_bilet\Exam_bilet.cpp(37,19):
+  см. использование "x"
+  
+C:\Users\postp\Desktop\Программирование\Конфигурирование Windows 10\Exam_bilet\Exam_bilet.cpp(50,33): warning C4390: ";": обнаружен пустой контролируемый оператор; это правильно?
