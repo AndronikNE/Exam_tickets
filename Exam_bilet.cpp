@@ -6,6 +6,13 @@
 
 using namespace std;
 
+//Инициализация дин.массива
+int* initArray(int* M, int Size) {
+    M = new int[Size];
+    return M;
+}
+
+
 int Integer(int& random, int& x)
 {
     int temp = 0;
@@ -16,6 +23,17 @@ int Integer(int& random, int& x)
     }
     return random;
 }
+
+void addElement(int**& A, int& n)
+{
+    int** newArray = nullptr;
+    newArray = initArray(newArray, n + 1);
+        
+    deleteMatrix(A, n);
+    n = n + 1; //изменяем количество 'строкэлементов в массиве на 1
+    A = newArray;
+
+}// функция добавления новой строки в матрицу
 
 
 
@@ -35,19 +53,29 @@ int main()
     cin >> x;
 
     const int n = x; //переменная для размера массива
+    int* M = nullptr; // объявление указателя
+    M = initArray(M, n);
+
     int M[n]; // массив для хранения вытянутых билетов
 
     while (true) // пока идет экзамен (пока вытягивают билеты)
     {
-        cout << "\nВведите номер билета: (0 - выход из программы)";
-        cin >> random;
         student++;
+
         i++; // увеличиваем счетчик массива
+        cout << "\nВведите номер билета: (0 - выход из программы)";
+        loop:
+        cin >> random;
 
         tickets = Integer(random, x);
         for (int k = 0; k < n; k++)
         {
             if (M[k] == tickets);
+            {
+                cout << "\nБилет №" << tickets << " уже был. Выберите другой билет: ";
+                goto loop;
+            }
+            else M[k] = tickets;
         }
         
 
